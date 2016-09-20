@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% if post_success %}
+{% endif %}
+
+{% block content %}
+<section style="opacity: 1;" id="page" class="clear" role="main" data-content-field="main-content" data-collection-id="53dbbcb1e4b067cbb1f60e31" data-edit-main-image="Banner">
+	<div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1452722625325" id="page-53dbbcb1e4b067cbb1f60e31">
+	<div class="row sqs-row">
+		<img src="/static/img/phillipandbillie4.jpg" alt="Phillip and Billie" style='height: 100%; width: 100%; object-fit: contain'>
+	</div>
+	<div class="row sqs-row">
+	<div class="col sqs-col-2 span-2">
+		<div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-block-type="21" id="block-yui_3_17_2_1_1406913102698_275859">
+			<div class="sqs-block-content">&nbsp;</div>
+		</div>
+	</div>
+	<div class="col sqs-col-8 span-8">
+	<div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-19f0661dc3389cb0651e">
+		<div class="sqs-block-content">
+			<h2 class="text-align-center">Please RSVP by November 1, 2016</h2>
+		</div>
+	</div>
+	<div class="sqs-block form-block sqs-block-form" data-block-type="9" id="block-yui_3_17_2_1_1406913102698_55355">
+		<div class="sqs-block-content">
+			<div class="form-wrapper">
+				<div class="form-inner-wrapper">
+					<form autocomplete="on" action="{% url 'rsvp_post' %}" method="POST" id="rsvp_form">
+						{% csrf_token %}
+
+						<div class="field-list clear">
+							<div id="attending1" class="form-item field text required">
+								<label class="title" for="attending1">Attending?</label>
+								<input class="field-element radio" name="attending1" type="radio" value="y" checked> Yes
+								<input class="field-element radio" name="attending1" type="radio" value="n"> No
+							</div>
+
+							<fieldset id="name1" class="form-item fields name required">
+								<input class="field-element radio" name="title1" type="radio" value="Mr." checked> Mr.
+								<input class="field-element radio" name="title1" type="radio" value="Mrs."> Mrs.
+								<input class="field-element radio" name="title1" type="radio" value="Ms."> Ms.
+								<input class="field-element radio" name="title1" type="radio" value="N/A"> N/A
+								<div class="title">Name</div>
+								<legend>Name</legend>
+								<div class="field first-name">
+									<label class="caption"><input class="field-element field-control" name="first_name1" x-autocompletetype="given-name" spellcheck="false" maxlength="50" data-title="First" type="text">
+									First Name</label>
+								</div>
+								<div class="field last-name">
+									<label class="caption"><input class="field-element field-control" name="last_name1" x-autocompletetype="surname" spellcheck="false" maxlength="50" data-title="Last" type="text">
+									Last Name</label>
+								</div>
+							</fieldset>
+						</div>
+
+
+						<div id="plus1" class="form-button-wrapper form-button-wrapper--align-right">
+							<button class="button sqs-system-button sqs-editable-button" value=" +1 " onclick="show(1);"></button>
+						</div>
+
+
+						<div id="minus2" class="form-button-wrapper form-button-wrapper--align-right" onclick="hide(2);" style="display: none;">
+							<button class="button sqs-system-button sqs-editable-button" value=" Remove "></button>
+						</div>
+
+
+
+
+						</div>
+						<div class="form-button-wrapper form-button-wrapper--align-center">
+							<input class="button sqs-system-button sqs-editable-button" value="RSVP" type="submit">
+						</div>
+
+					</form>
+				</div>
+			</div>
+			<div class="col sqs-col-2 span-2">
+				<div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-block-type="21" id="block-yui_3_17_2_1_1406913102698_278275">
+					<div class="sqs-block-content">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block footer_js %}
+<script type="text/javascript">
+var num_visible = 1;
+
+function addInput() {
+    var form = document.getElementById('rsvp_form');
+    var new_text_area = document.createElement('input');
+    new_text_area.setAttribute('type','textarea');
+    new_text_area.setAttribute('rows', '4');
+    new_text_area.setAttribute('cols', '20');
+    form.appendChild(new_text_area);
+}
+
+function show(i) {
+    var p_name = document.getElementById("p_label"+num_persons).innerHTML;
+    document.getElementById("new_task_label").innerHTML="New " + p_name + " Task:";
+  } else {
+    document.getElementById("new_task_label").innerHTML="New Task:";
+  }
+  document.getElementById("task_modal").style.display="block";
+  document.getElementById("add_buttons_section").style.display="none";
+  document.getElementById("id_project_id").value=project;
+}
+
+function hide(i) {
+
+}
+
+function send() {
+  document.getElementById("rsvp_form").submit();
+}
+
+</script>
+{% endblock %}
