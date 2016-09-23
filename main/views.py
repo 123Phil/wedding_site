@@ -1,4 +1,9 @@
+from django.http import HttpResponseRedirect, Http404
+from django.forms import modelformset_factory
 from django.shortcuts import render
+from django.core.mail import send_mail
+from .models import Person
+
 
 def main_view(req):
 	return render(req, "main.html")
@@ -15,26 +20,44 @@ def photo_view(req):
 def registry_view(req):
 	return render(req, "registry.html")
 
+
+## RSVP helpers
+def not_required(field):
+    return field.formfield(required=False)
+
+def get_factory():
+	return modelformset_factory(Person, fields='__all__', extra=6, formfield_callback=not_required)
+
+
+## RSVP views
 def rsvp_view(req):
-	context = {}
-	#context["name_form"] = NameForm()
-	return render(req, "rsvp.html", context)
+	PersonFormSet = get_factory()
+	return render(req, "rsvp2.html", {'formset': PersonFormSet(queryset=Person.objects.none())})
+
+def rsvp_success(req):
+	PersonFormSet = get_factory()
+	return render(req, "rsvp2.html", {'formset': PersonFormSet(queryset=Person.objects.none()), 'post_success': True})
 
 def rsvp_post(req):
 	if req.method != 'POST':
 		raise Http404('Invalid request.')
-	f = NameForm(req.POST)
-	if not f.is_valid():
-		raise Http404('Invalid form.')
+	PersonFormSet = get_factory()
+	people = PersonFormSet(req.POST)
+	if not people.is_valid():
+		return render(req, "rsvp2.html", {'formset': people})
 
-	first_name = task_form.cleaned_data["first_name"]
-	last_name = task_form.cleaned_data["last_name"]
-	title = task_form.cleaned_data["title"]
-	attending = task_form.cleaned_data["attending"]
-	meal = task_form.cleaned_data["meal"]
+	for person in people:
+		if 'first_name' in person.cleaned_data and len(person.cleaned_data['first_name']) > 0:
+			#print('saving: ' + person.cleaned_data['first_name'])
+			entry = person.save(commit=False)
+			entry.save()
+	
+	# subject = 'Wedding RSVP'
+	# message = [str(person) ...]
+	# sender = 'some_email@gmail.com'
+	# recipients = ['phillipwstewart@gmail.com']
+	# send_mail(subject, message, sender, recipients)
 
-	Person.objects.create(first_name=first_name, last_name=last_name,
-							title=title, attending=attending, meal=meal)
+	return HttpResponseRedirect('/rsvp_thanks')
 
-	context = {post_success:true}
-	return render(req, "main.html", context)
+		
