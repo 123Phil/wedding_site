@@ -32,51 +32,35 @@
 <link rel="stylesheet" type="text/css" href="/static/header.css">
 <link rel="stylesheet" type="text/css" href="/static/site.css">
 <link href="/static/socialwidgets.css" type="text/css" rel="stylesheet"></head>
-<style type="text/css">.canvas-style-normal #canvas {margin: 20px auto;} #canvas {padding: 20px 100px 0;}</style>
+ {% if is_mobile %}<style type="text/css">.canvas-style-normal #canvas {margin: 10px auto;} #canvas {padding: 5px;}
+ </style>
+{% else %}<style type="text/css">.canvas-style-normal #canvas {margin: 20px auto;} #canvas {padding: 20px 100px;}</style>
+{% endif %}
 
-<body class="show-products-category-navigation   page-borders-thick canvas-style-normal  header-subtitle-none banner-alignment-center blog-layout-center project-layout-left-sidebar thumbnails-on-open-page-show-all social-icon-style-round hide-social-icons hide-info-footer hide-page-banner hide-page-title hide-page-title-underline  hide-article-author product-list-titles-under product-list-alignment-center product-item-size-32-standard  product-gallery-size-11-square product-gallery-auto-crop show-product-price show-product-item-nav product-social-sharing   event-thumbnails event-thumbnail-size-32-standard event-date-label event-date-label-time event-list-show-cats event-list-date event-list-time event-list-address   event-icalgcal-links  event-excerpts  event-item-back-link      opentable-style-light newsletter-style-dark small-button-style-outline small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square button-style-solid button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-type-page collection-layout-default homepage mobile-style-available site-title" id="collection-53dbbcb1e4b067cbb1f60e31">
+<body class="show-products-category-navigation   page-borders-thick canvas-style-normal  header-subtitle-none banner-alignment-center blog-layout-center project-layout-left-sidebar thumbnails-on-open-page-show-all social-icon-style-round hide-social-icons hide-info-footer hide-page-banner hide-page-title hide-page-title-underline  hide-article-author product-list-titles-under product-list-alignment-center product-item-size-32-standard  product-gallery-size-11-square product-gallery-auto-crop show-product-price show-product-item-nav product-social-sharing   event-thumbnails event-thumbnail-size-32-standard event-date-label event-date-label-time event-list-show-cats event-list-date event-list-time event-list-address   event-icalgcal-links  event-excerpts  event-item-back-link      opentable-style-light newsletter-style-dark small-button-style-outline small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square button-style-solid button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-type-page collection-layout-default homepage site-title">
 
 <div id="canvas">
-  <div id="mobileMenuLink"><a>Menu</a></div>
-    <header id="header" class="clear">
-      <div id="upper-logo">
-        <h1 class="logo" data-content-field="site-title">
-          <a href="http://philipandbillie.com/">Phillip &amp; Chavinee</a>
-        </h1>
-      </div>
-      <div id="lower-logo">
-        <h1 style="letter-spacing: 0.0166667em;" data-shrink-original-size="60" class="logo" data-content-field="site-title"><a href="http://philipandbillie.com/">Phillip &amp; Chavinee</a></h1>
-      </div>
-      <div id="topNav">
-        <nav class="main-nav" data-content-field="navigation">
-          <ul>
-            <li class="page-collection active-link">
-              <a href="{% url 'main_view' %}">Home</a>
-            </li>
-            <li class="page-collection">
-              <a href="{% url 'details_view' %}">Wedding</a>
-            </li>
-            <li class="page-collection">
-              <a href="{% url 'travel_view' %}">Travel</a>
-            </li>
-            <li class="page-collection">
-              <a href="{% url 'photo_view' %}">Photos</a>
-            </li>
-            <li class="page-collection">
-              <a href="{% url 'registry_view' %}">Registry</a>
-            </li>
-            <li class="page-collection">
-              <a href="{% url 'rsvp_view' %}">RSVP</a>
-            </li>
-          </ul>
-          <div class="page-divider"></div>
-        </nav>
-      </div>
-    </header>
+  <header id="header" class="clear">
+    <div id="upper-logo">
+      <h1 class="logo" data-content-field="site-title">
+        <a href="http://phillipandbillie.com/">Phillip &amp; Chavinee</a>
+      </h1>
+    </div>
+    <div id="topNav">
+      <nav>
+        <ul>
+{% block links %}
+
+{% endblock %}
+        </ul>
+        <div class="page-divider"></div>
+      </nav>
+    </div>
+  </header>
 {% block content %}
 
 {% endblock %}
-<div class="sqs-layout sqs-grid-12 columns-12 empty" data-layout-label="Home Footer Content" data-type="block-field" id="collection-53dbbcb1e4b067cbb1f60e31">
+  <div class="sqs-layout sqs-grid-12 columns-12 empty" data-layout-label="Home Footer Content" data-type="block-field" id="collection-53dbbcb1e4b067cbb1f60e31">
     <div class="row sqs-row">
       <div class="col sqs-col-12 span-12"></div>
     </div>

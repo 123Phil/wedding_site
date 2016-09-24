@@ -24,7 +24,7 @@ DEBUG = True
 SITE_ID = 1
 ADMINS = (('Phil', 'phillipwstewart@gmail.com'))
 
-ALLOWED_HOSTS = ['phillipandbillie.com']
+ALLOWED_HOSTS = ['phillipandbillie.com', 'www.phillipandbillie.com']
 
 # Application definition
 INSTALLED_APPS = (
@@ -61,6 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.context_processors.is_mobile',
             ],
         },
     },

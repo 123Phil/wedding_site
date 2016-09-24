@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 
+{% block links %}
+<li class="page-collection">
+  <a href="{% url 'main_view' %}">Home</a>
+</li>
+<li class="page-collection active-link">
+  <a href="{% url 'details_view' %}">Wedding</a>
+</li>
+<li class="page-collection">
+  <a href="{% url 'travel_view' %}">Travel</a>
+</li>
+<li class="page-collection">
+  <a href="{% url 'photo_view' %}">Photos</a>
+</li>
+<li class="page-collection">
+  <a href="{% url 'registry_view' %}">Registry</a>
+</li>
+<li class="page-collection">
+  <a href="{% url 'rsvp_view' %}">RSVP</a>
+</li>
+{% endblock %}
+
 {% block content %}
 <section style="opacity: 1;" id="page" class="clear" role="main" data-content-field="main-content" data-collection-id="53dbbcb1e4b067cbb1f60e31" data-edit-main-image="Banner">
   <div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1452722625325" id="page-53dbbcb1e4b067cbb1f60e31">

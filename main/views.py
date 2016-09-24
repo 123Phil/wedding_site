@@ -32,11 +32,11 @@ def get_factory():
 ## RSVP views
 def rsvp_view(req):
 	PersonFormSet = get_factory()
-	return render(req, "rsvp2.html", {'formset': PersonFormSet(queryset=Person.objects.none())})
+	return render(req, "rsvp.html", {'formset': PersonFormSet(queryset=Person.objects.none())})
 
 def rsvp_success(req):
 	PersonFormSet = get_factory()
-	return render(req, "rsvp2.html", {'formset': PersonFormSet(queryset=Person.objects.none()), 'post_success': True})
+	return render(req, "rsvp.html", {'formset': PersonFormSet(queryset=Person.objects.none()), 'post_success': True})
 
 def rsvp_post(req):
 	if req.method != 'POST':
@@ -44,7 +44,7 @@ def rsvp_post(req):
 	PersonFormSet = get_factory()
 	people = PersonFormSet(req.POST)
 	if not people.is_valid():
-		return render(req, "rsvp2.html", {'formset': people})
+		return render(req, "rsvp.html", {'formset': people})
 
 	for person in people:
 		if 'first_name' in person.cleaned_data and len(person.cleaned_data['first_name']) > 0:

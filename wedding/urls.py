@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^travel$', views.travel_view, name='travel_view'),
     url(r'^photos$', views.photo_view, name='photo_view'),
     url(r'^registry$', views.registry_view, name='registry_view'),
+    url(r'^RSVP$', views.rsvp_view, name='rsvp_view'),
     url(r'^rsvp$', views.rsvp_view, name='rsvp_view'),
     url(r'^rsvp_thanks$', views.rsvp_success, name='rsvp_success'),
     url(r'^rsvpsubmit$', views.rsvp_post, name='rsvp_post')
