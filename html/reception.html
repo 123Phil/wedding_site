@@ -76,7 +76,7 @@
     <div class="span-4" style="float: left; width: 33.33%">
       <div class="sqs-block html-block sqs-block-html" data-block-type="21">
         <div class="sqs-block-content">
-          <h2 id="count-text" class="text-align-center">1 / 64</h2>
+          <h2 id="count-text" class="text-align-center"></h2>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@
     </div>
   </div>
 <div class="row sqs-row">
-  <img id="selected-image" src="https://i.imgur.com/2MGupFO.jpg" alt="Phillip and Billie" style="width: 100%; object-fit: contain">
+  <img id="selected-image" src="" alt="Phillip and Billie" style="width: 100%; object-fit: contain">
 </div>
 <div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47">
   <div class="sqs-block-content">
@@ -109,7 +109,7 @@
 </div>
 
 <script type="text/javascript">
-function bg(){var e=document.getElementById("thumb"+index);null!=e&&(e.style.backgroundColor="#FFF")}function setImage(){var e=document.getElementById("selected-image");null!=e&&(e.src="http://i.imgur.com/"+images[index]+".jpg");var t=document.getElementById("count-text");null!=t&&(t.innerHTML=index+1+" / "+images.length);var n=document.getElementById("thumb"+index);null!=n&&(n.style.backgroundColor="#AAA")}function goLeft(){bg(),--index,0>index&&(index=images.length-1),setImage()}function goRight(){bg(),++index,index>=images.length&&(index=0),setImage()}function goTo(e){index!=e&&(bg(),index=e,setImage()),document.getElementById("selected-image").scrollIntoView()}for(var index=0,images=["2MGupFO","UdzX50V","cI7an0C","Ni9TPrk","8VE0qnY","v1eQCW2","khN0VPo","vlWaJkF","tAEGwHU","7feTOI7","Ev05Hek","l9aeJtJ","A7O0q1z","i65hDbj","J34la57","7awP2Qr","BblWA2f","exMWZdO","V3f1yO2","pg9YOUl","otZK9cB","w0mVvdN","DNkOEZ4","Pgdidd1","AI4oJU9","WzGRpvv","SeTxlpy","DBkCURI","xqPjE03","tFL5p0w","9Dwtsiu","ejaAAfl","IpzrkAg","BSbuY0Y","HilUm1Z","yPZI5Ho","vfW2WGq","Dcub741","UdZ1gHw","x5DHRHm","5LEqPrW","S8JIeVn","cw99igF","wfAn6BH","bMwv18F","cH86b3g","Ogxq78K","LoKVaiH","eDw5MIL","ZnduSTk","9beFVcr","vHNqPp0","naexa1b","imBl57N","wB7eCPw","8rItZgv","B5pSZJa","4HL0Ow6","RUgLzyj","OXPSwTM","5qfTg36","oRJ8gCS","nd8wI7m","PH0cqQN"],w=Math.max(document.documentElement.clientWidth,window.innerWidth||0),numCols=Math.min(8,Math.floor(w/150)),thumbHTML='<table style="width:100%">',i=0;i<images.length;++i){i%numCols==0&&(thumbHTML+="<tr>");var t="http://i.imgur.com/"+images[i]+"t.jpg";thumbHTML+='<td style="vertical-align:middle;" id="thumb'+i+'"><div style="margin: 5px;">',thumbHTML+='<img src="'+t+'" alt="photo" style="width: 100%; object-fit: contain" onclick="goTo('+i+')"></td></div>',i%numCols==numCols-1&&(thumbHTML+="</tr>")}thumbHTML+="</table>";var thumbSection=document.getElementById("thumbnail-section");null!=thumbSection&&(thumbSection.innerHTML=thumbHTML);
+function bg(){var e=document.getElementById("thumb"+index);null!=e&&(e.style.backgroundColor="#FFF")}function setImage(){var e=document.getElementById("selected-image");null!=e&&(e.src="http://i.imgur.com/"+images[index]+".jpg");var t=document.getElementById("count-text");null!=t&&(t.innerHTML=index+1+" / "+images.length);var n=document.getElementById("thumb"+index);null!=n&&(n.style.backgroundColor="#AAA")}function goLeft(){bg(),--index,0>index&&(index=images.length-1),setImage()}function goRight(){bg(),++index,index>=images.length&&(index=0),setImage()}function goTo(e){index!=e&&(bg(),index=e,setImage()),document.getElementById("selected-image").scrollIntoView()}for(var index=0,images=["PelPls7","qXhDx4Y","dniPRZu","rDN9mrc","Pp6IyLj","MSCrSoI","ViLgNfu","9Z6r66g","07JIldX","6NK9hRP","BKMSKHL","X2YWHsC","YXvY91B","46HBfEG","tzU3fya","PDYJY5o","6Uh2Lk7","nXyBE8U","xpATFyU","DzeVC62","riPAibH","jRJU0i9","7071tqY","zTHowPC","qhY4n5i","hwKP0db","EPCkpTp","WqTivZi","YaRg1cx","cpn5bBl","2V8mGjT","M3WVeum","dttGoNr","I2r1hm3","hdHavAy","B4j8tcz","Z0vdqrq","xXEokYo","c9k0cG9","Qqdayzw","aeBaoNM","AetQTMP","7wXRIMf","abWklv5","JqL3frH","wz9AWEO","QqDUDiI","74TWtBw","0DGwWxj","kAA4TM2","Ex5oQzq","fGOQKj5","RGbCIxo","bC67v7A","2rRvFOz","hIcOoBW","tLRzWhd","2UCFqJF","KRmwQHP","dVYifPD","xvxoACG","ePmP3az","KZHntnv","dfg4PYD","w13QtCb","ryTyDxG","ebV0Vdr","PmmolY9","3WDwPxC","t4kQJ0f","zDzeBd7","vMolACP","exJtfsi","d5fYk4O","CglllVI","oI8voYK","MDuy2Y9","OjIXjLt","KeDyh60","EHFTkjR"],w=Math.max(document.documentElement.clientWidth,window.innerWidth||0),numCols=Math.min(8,Math.floor(w/150)),thumbHTML='<table style="width:100%">',i=0;i<images.length;++i){i%numCols==0&&(thumbHTML+="<tr>");var t="http://i.imgur.com/"+images[i]+"t.jpg";thumbHTML+='<td style="vertical-align:middle;" id="thumb'+i+'"><div style="margin: 5px;">',thumbHTML+='<img src="'+t+'" alt="photo" style="width: 100%; object-fit: contain" onclick="goTo('+i+')"></td></div>',i%numCols==numCols-1&&(thumbHTML+="</tr>")}thumbHTML+="</table>";var thumbSection=document.getElementById("thumbnail-section");null!=thumbSection&&(thumbSection.innerHTML=thumbHTML);goTo(0);
 </script>
 
 </body>
